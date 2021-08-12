@@ -1243,12 +1243,12 @@ CHAKRA_API JsPointerToString(_In_reads_opt_(stringLength) const WCHAR *stringVal
 		else
 		{
 			PARAM_NOT_NULL(stringValue);
-			
 
 			if (!Js::IsValidCharCount(stringLength))
 			{
 				Js::JavascriptError::ThrowOutOfMemoryError(scriptContext);
 			}
+
 			*string = Js::JavascriptString::NewCopyBuffer(stringValue, static_cast<charcount_t>(stringLength), scriptContext);
 		}
 
